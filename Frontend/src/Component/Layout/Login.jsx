@@ -19,7 +19,7 @@ const Login = () => {
     return (
         <>
             <div className="grid grid-cols-1">
-                <div className="flex flex-col m-10  p-5 bg-white rounded-lg shadow">
+                <div className="flex flex-col m-10  p-5 bg-white rounded-lg shadow-lg shadow-blue-600">
                     
                     <div className="text-[#000000] text-3xl mt-5 ml-4" style={{ fontWeight: "700" }}> <h1>Account Login</h1>  </div>
                     <p className="text-[#8692A6] ml-4 mt-1 p-1 h-18">  If you have already registered, you can login with your username and password.</p>
@@ -33,7 +33,7 @@ const Login = () => {
                         />
                     </div>
                     <label className="mt-2 ml-5 text-[#494949]">Password</label>
-                    {visible && <div className="flex flex-row border border-[#1565D8] ml-4 rounded-lg h-10" >
+                    {!visible && <div className="flex flex-row border border-[#1565D8] ml-4 rounded-lg h-10" >
                         <input type="text" placeholder="Enter Your Password"
                             className="mr-5 outline-0  pl-4 w-full rounded-lg border-[#1565D8]" value={password} onChange={(e) => {
                                 setpassword(e.target.value);

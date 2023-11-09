@@ -68,10 +68,7 @@ const Profile = () => {
                 <label className="text-xl font-serif">Gender  :-</label>
                 <h3 className="text-l">{gender}</h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 mt-3 border-b-2 p-2">
-                <label className="text-xl font-serif">Broker  :-</label>
-                <h3 className="text-l">{broker}</h3>
-              </div>
+              
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 p-3 rounded mt-3">
               <button className='font-sans bg-blue-500 rounded-lg text-white text-l h-8' onClick={() => { navigate('/update_profile') }}>Update Profile</button>

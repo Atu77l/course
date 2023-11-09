@@ -39,9 +39,9 @@ const Signup = () => {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="flex flex-col p-5 m-5 bg-white rounded-lg shadow lg:w-10/12 ">
-                    <div className="text-[#000000] text-3xl mt-5 ml-4" style={{ fontWeight: "700" }}>
+            <div className="grid grid-cols-1">
+                <div className="flex flex-col p-5 m-5 bg-white rounded-lg lg:w-10/12 shadow-lg shadow-blue-600">
+                    <div className="text-[#000000] text-3xl mt-1 ml-4" style={{ fontWeight: "700" }}>
                         <h1>Create Account</h1>
                     </div>
                     <div className="ml-5 font-semibold">
@@ -52,14 +52,12 @@ const Signup = () => {
                     <div className="flex flex-col">
                         <label className="ml-5 text-[#494949] pl-1">Full Name*</label>
                         <div className="text-center justify-center">
-                            <input type="text" required placeholder="Enter Your Name"
-                                className="mt-1 outline-0 h-10   border border-[#1565D8] pl-4 ml-4 rounded-lg w-11/12" value={name} onChange={(e) => {
-                                    setname(e.target.value);
-                                }} />
+                            <input type="text" required placeholder="Enter Your Name" className="mt-1 outline-0 h-10   border border-[#1565D8] pl-4 ml-4 rounded-lg w-11/12" value={name} onChange={(e) => {
+                                setname(e.target.value);
+                            }} />
                         </div>
-
                         <div className="flex flex-col">
-                            <label className="ml-5 mt-5 text-[#494949] pl-1 sm:mt-0">Email Address*
+                            <label className="ml-5 mt-2 text-[#494949] pl-1 sm:mt-0">Email Address*
                             </label>
                             <div className="text-center justify-center">
                                 <input type="email" required placeholder="Enter Email"
@@ -68,10 +66,8 @@ const Signup = () => {
                                     }} />
                             </div>
                         </div>
-
-
                         <div className="flex flex-col">
-                            <label className="mt-5 ml-5 text-[#494949] pl-1">Password*</label>
+                            <label className="mt-2 ml-5 text-[#494949] pl-1">Password*</label>
                             {visible && <div className="flex flex-row border border-[#1565D8] ml-4 rounded-lg h-10" >
                                 <input type="text" placeholder="Enter Your Password"
                                     className="mr-5 outline-0  pl-4 w-full rounded-lg border-[#1565D8]" value={password}
@@ -79,7 +75,6 @@ const Signup = () => {
                                 <VisibilityIcon sx={{ cursor: "pointer", marginLeft: "20px", marginRight: "10px", marginTop: "6px" }} onClick={() => { setVisible(false) }} />
                             </div>
                             }
-
                             {!visible && <div className="flex flex-row border border-[#1565D8] rounded-lg ml-4 h-10">
                                 <input type="password" placeholder="Enter Your Password" className="mr-5 outline-0   pl-4 w-full rounded-lg border-[#1565D8]"
                                     value={password} onChange={(e) => { setpassword(e.target.value); }} />
