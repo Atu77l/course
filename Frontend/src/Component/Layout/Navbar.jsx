@@ -9,7 +9,7 @@ const Navbar = () => {
             <Link to='/'> <div className="mt-9 lg:ml-20 sm:ml-2 text-2xl  font-medium hover:underline">Home</div></Link>
             <div className="mt-9 text-2xl pl-10 font-medium hover:underline">About</div>
             <div className="mt-9 text-2xl pl-10 font-medium ">Contact</div>
-            <Link to='/detail/:id'>
+            <Link to='/detail'>
                 <div className="mt-9 text-2xl pl-10 font-medium ">Course</div>
             </Link>
             <Link to='/profile'>

@@ -3,62 +3,43 @@ import { useParams } from "react-router-dom";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import axios from "axios";
 import Navbar from "../Layout/Navbar";
+import useCourseStore from "../../store/course";
 
 const CourseDetail = () => {
   // Define state for courseDetail and params
-  const [courseDetail, setCourseDetail] = useState({});
-  const params = useParams();
+  const {courseDetail,updateCourseDetail}=useCourseStore();
 
-  // Function to fetch course data
-  const fetchData = () => {
-    let config = {
-      method: "get",
-      maxBodyLength: Infinity,
-      url: `http://localhost:4000/get/${params.id}`, // Replace :id with actual course ID
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+  const enrolledCourse=()=>{
+    const data = window.confirm('Are you sure want to enrolled in a course!!.');
+    if(data)
+    {
+      alert('Successfully Enrolled in a Course!!');
+    }
+  }
 
-    axios
-      .request(config)
-      .then((response) => {
-        console.log("item data", JSON.stringify(response.data));
-        setCourseDetail(response?.data?.detail[0]);
-        console.log(courseDetail);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  // Use useEffect to fetch data when component mounts or params.id changes
-  useEffect(() => {
-    fetchData();
-  }, [params.id]);
 
   return (
     <>
       <Navbar />
+      <div className="font-serif text-center text-2xl bg-blue-600 text-white p-1 m-5 rounded-xl">CourseDetail</div>
       <div className="flex flex-row items-center w-4/6 mx-auto my-10">
         <img
-          src={courseDetail.imagelink}
+          src={courseDetail.thumbnail}
           alt={courseDetail.name}
           className="h-32 w-32 object-cover mr-10 rounded-lg"
         />
         <div>
-          <h1 className="text-3xl font-bold mb-2">{courseDetail.name}</h1>
-          <p className="text-xl mb-4">{courseDetail.instructor}</p>
-          <p className="text-gray-800 mb-6">{courseDetail.description}</p>
-          <div className="font-medium text-xl mb-2">
+          <h1 className="text-3xl font-bold mb-2">Course Name:  {courseDetail.name}</h1>
+          <p className="text-xl mb-4">Instructor Name:   {courseDetail.instructor}</p>
+          <p className="text-gray-800 mb-6">Description:  {courseDetail.description}</p>
+          <div className="font-medium text-xl mb-2">Enrollment Status: 
             {courseDetail.enrollmentStatus}
           </div>
-          <p className="text-xl mb-4">{courseDetail.duration}</p>
-          <div className="text-xl mb-4 font-bold">{courseDetail.schedule}</div>
-          <div className="text-xl mb-4 font-bold">{courseDetail.location}</div>
-          <div className="mb-4">
+          <p className="text-xl mb-4">Duration:  {courseDetail.duration}</p>
+          <div className="text-xl mb-4 font-bold">Schedule:   {courseDetail.schedule}</div>
+          <div className="text-xl mb-4 font-bold">Location:  {courseDetail.location}</div>
+          <div className="mb-4">Pre-requisites:  
             {courseDetail.prerequisites &&
               courseDetail.prerequisites.map((item, key) => (
                 <div key={key} className="bg-gray-100 rounded-md p-2 mb-2">
@@ -66,7 +47,7 @@ const CourseDetail = () => {
                 </div>
               ))}
           </div>
-          <div>
+          <div>Syllabus: 
             {courseDetail.syllabus &&
               courseDetail.syllabus.map((item, key) => (
                 <div key={key} className="mb-4">
@@ -76,9 +57,11 @@ const CourseDetail = () => {
                 </div>
               ))}
           </div>
+          <div className="">
+            <button className="bg-blue-400 text-white rounded-md w-36 font-serif" onClick={()=>{enrolledCourse();}}>Enrolled</button>
+          </div>
         </div>
       </div>
-
       <div className="bg-[#7eaad5] w-screen h-40">
         <div className="text-center pt-10">
           <LinkedInIcon sx={{ color: "white" }} />

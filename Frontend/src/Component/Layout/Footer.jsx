@@ -16,9 +16,6 @@ const Footer = () => {
      <div className= "text-center text-white pt-8">Copyright © 2022 XYZ - All Rights Reserved.</div>
       </div>
       </div>
-     
-     
-
     </>
   )
 }

@@ -2,8 +2,7 @@ import React,{useState} from "react";
 import image1 from "../../assests/1.jpg";
 import image2 from "../../assests/2.jpg";
 import image3 from "../../assests/3.jpg";
-import ListIcon from '@mui/icons-material/List';
-import Navbar from "../Home/Sidebar";
+
 const Carousel = () => {
   const [show,setShow]=useState(false);
   return (
@@ -14,7 +13,6 @@ const Carousel = () => {
         data-ride="carousel"
       >
         <ol className="carousel-indicators">
-        <ListIcon onClick={()=>{setShow(!show)}}/>
           <li
             data-target="#carouselExampleIndicators"
             data-slide-to="0"

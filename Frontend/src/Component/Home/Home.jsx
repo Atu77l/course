@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Sidebar";
 import Carousel from "../Layout/Carousel";
 import Chatbox from '../Layout/Chat'
-import Course from '../Course/Box'
+import CourseList from '../Course/CourseList'
 
 const Home = () => {
   return (
@@ -13,8 +13,8 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-1 ml-[120px]">
           <Carousel />
-          <Course />
-          <Chatbox />
+          <CourseList />
+          {/* <Chatbox /> */}
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ const Sidebar = () => {
             <div className="mt-4 hover:underline bg-blue-400 rounded-xl">Home</div>
               <div className="mt-4 hover:underline bg-blue-400 rounded-xl">About</div>
               <div className="mt-4 hover:underline bg-blue-400 rounded-xl">Contact</div>
-              <Link to='/course'><div className="mt-4 hover:underline bg-blue-400 rounded-xl">Course</div></Link>
+              <Link to='/detail'><div className="mt-4 hover:underline bg-blue-400 rounded-xl">Course</div></Link>
               <Link to='/profile'><div className="mt-4 hover:underline bg-blue-400 rounded-xl">Profile</div></Link>
           </div>
         </div>
