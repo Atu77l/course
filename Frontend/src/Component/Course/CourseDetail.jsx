@@ -11,7 +11,7 @@ const CourseDetail = () => {
   const {courseDetail,updateCourseDetail}=useCourseStore();
 
   const enrolledCourse=()=>{
-    const data = window.confirm('Are you sure want to enrolled in a course!!.');
+    const data = window.confirm('Are   you kullu  sure want to enrolled in a course!!.');
     if(data)
     {
       alert('Successfully Enrolled in a Course!!');
